@@ -1,0 +1,94 @@
+#bibliotecas
+import hashlib
+
+
+#apresentaçao 
+print ('HashPack')
+print ('Gere hash de qualquer texto...')
+print ('''
+
+██╗  ██╗ █████╗ ███████╗██╗  ██╗██████╗  █████╗  ██████╗██╗  ██╗
+██║  ██║██╔══██╗██╔════╝██║  ██║██╔══██╗██╔══██╗██╔════╝██║ ██╔╝
+███████║███████║███████╗███████║██████╔╝███████║██║     █████╔╝ 
+██╔══██║██╔══██║╚════██║██╔══██║██╔═══╝ ██╔══██║██║     ██╔═██╗ 
+██║  ██║██║  ██║███████║██║  ██║██║     ██║  ██║╚██████╗██║  ██╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+                                    
+''')
+#user
+print ('''Qual hash deseja usar
+    
+    1: MD5
+    2: SHA256
+    3: SHA1
+    4: SHA512
+        ''')
+exp = int(input(':> '))
+
+match exp:
+    case 1:
+        #apresentaçao MD5
+        print ('MD5')
+        print ('''
+                Como Funciona:
+O MD5 processa os dados de entrada e produz um hash único. Mesmo uma peque
+na alteração nos dados de entrada resultará em um hash completamente diferente1.
+Por exemplo, a palavra “sapo” sempre gera o hash 938c2cc0dcc05f2b68c4287040cfcf711.
+                ''')
+         #resultado final 
+        v1 = input('Coloque o texto que deseja criar hash: ')
+        hcode = hashlib.md5((v1).encode('utf-8')).hexdigest()
+        print ('O valor criado e de: ',hcode)
+        
+    case 2:
+        #apresentaçao sha256
+        print ('SHA256')
+        print ('''
+                Como Funciona:
+O SHA-256 transforma uma entrada de tamanho arbitrário em uma saída de tamanho fixo de 256 bits.
+Ele realiza várias operações matemáticas complexasnos blocos de dados da entrada e, em seguida, produz a saída12.
+Isso garante que mesmo pequenas alterações na entrada resultem em um hash completamente diferente.
+                ''')
+        
+        #resultado final 
+        v2 = input('Coloque o texto que deseja criar hash: ')
+        fcode = hashlib.sha256((v2).encode('utf-8')).hexdigest()
+        print ('O valor criado e de: ',fcode)
+
+    case 3:
+        #apresentaçao Sha1
+        print ('SHA1')
+        print ('''
+                Como Funciona
+O SHA-1 processa a entrada de dados e produz um hash único de 160 bits.
+Qualquer alteração na entrada resultará em um hash completamente diferente
+
+                ''')
+        #resultado final 
+        v3 = input('coloque o texto que deseja criar hash: ')
+        gcode = hashlib.sha1((v3).encode('utf-8')).hexdigest()
+        print ('O valor criado e de: ',gcode)
+        
+    case 4:
+        #apresentaçao Sha512
+        print ('SHA512')
+        print ('''
+
+                Como Funciona
+O SHA-512 transforma uma entrada de tamanho arbitrário em uma saída de tamanho fixo de 512 bits.
+Ele realiza uma série de operações matemáticas complexas nos blocos de dados da entrada,
+garantindo que mesmo pequenas alterações na entrada resultem em um hash completamente diferente2.
+
+''')
+        #resultado final 
+        v4 = input('coloque o texto que deseja criar hash: ')
+        kcode = hashlib.sha512((v4).encode('utf-8')).hexdigest()
+        print ('O valor criado e de: ',kcode)
+        
+
+
+r = input('..')
+
+#-------------------------------------
+print ('By Silver Tech')
+
